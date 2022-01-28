@@ -1,0 +1,51 @@
+{
+  "name": "seani",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run export-env && next",
+    "start": "next start",
+    "build": "npm run export-env && next build",
+    "export-env": "node export-env.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.57",
+    "cookie": "^0.4.1",
+    "cookie-parser": "^1.4.5",
+    "cookies": "^0.8.0",
+    "dotenv": "^8.2.0",
+    "firebase": "^8.4.1",
+    "firebase-functions": "^3.13.2",
+    "isomorphic-fetch": "^3.0.0",
+    "js-cookie": "^2.2.1",
+    "materialize-css": "^1.0.0",
+    "next": "^10.1.3",
+    "next-images": "^1.7.0",
+    "next-redux-wrapper": "^6.0.2",
+    "next-videos": "^1.4.0",
+    "notistack": "^1.0.5",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.3",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.9",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^2.0.3",
+    "socket.io": "^4.0.1",
+    "socket.io-client": "^4.0.1",
+    "styled-components": "^5.2.3",
+    "sweetalert2": "^10.16.3",
+    "swr": "^0.5.6"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.12.0"
+  }
+}

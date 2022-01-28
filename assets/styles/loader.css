@@ -1,0 +1,15 @@
+.page-loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    text-align: center;
+    background-color: #03103b;
+    background-image: linear-gradient(90deg, #03103b 0%, #10418c 100%);
+    background-image: -webkit-linear-gradient(right, #03103b, #10418c);
+  }
+  .ui.dimmer{
+    background-color: rgba(0,0,0,.96) !important;
+  }

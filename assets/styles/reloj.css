@@ -1,0 +1,16 @@
+*{
+     margin: 0;
+     padding: 0;
+     -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+     box-sizing: border-box;
+}
+.reloj{
+     width: 100%;
+     padding: 5px;
+     font-family: 'Saira', sans-serif;
+     font-size: 1.5em;
+     /*background: linear-gradient(90deg, #E3547E,#8F81D6, #14C4BC, #505394, #FEE7FE);*/
+     background: linear-gradient(90deg, #FF844C, #2A6049, #14C4BC);
+
+}

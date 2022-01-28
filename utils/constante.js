@@ -1,0 +1,1 @@
+export const fechaAplicacion = new Date("2021-30-26T20:00");
