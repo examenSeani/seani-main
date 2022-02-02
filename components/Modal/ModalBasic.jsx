@@ -20,7 +20,7 @@ const Modal = () => {
     if (time > 0) {
       Swal.fire({
         title: `¿Terminar módulo ${typeTest}?`,
-        text: "No podras revertir esto",
+        text: "Estas finalizando esta sección de tú evaluación, no se podrá revertir esta acción",
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",

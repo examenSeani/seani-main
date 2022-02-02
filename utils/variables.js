@@ -1,9 +1,9 @@
 // WARN: This is a generated file. Do not modify!
     export * from './constante'
-    export const collection = 'e3-2021';
+    export const collection = 'e1-2022';
     //ya no es nesesario modificar las credenciales, en su lugar crear un ".env" y meter toda la info
     //poner fecha en cuando se aplicara
-    export const fechaActual = new Date(Date.now());
+    // export var fechaActual = new Date(Date.now());
 
     export  const firebaseConfig  = {
        apiKey: 'AIzaSyAyiLjNMCdX4vkB_kM0n8D_KE-tWhzGGg4',
