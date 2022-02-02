@@ -7,7 +7,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import Cookies from 'cookies'
-import { fechaActual, fechaAplicacion } from 'utils/variables'
+import { fechaAplicacion, fechaFinExamen } from 'utils/variables'
 import { accionUser, accionAlumno } from "../redux/accion";
 import Swal from "sweetalert2";
 
@@ -31,7 +31,10 @@ const index = () => {
 
   const handlerSubmit = (e) => {
     e.preventDefault();
-    if (fechaActual < fechaAplicacion) {
+
+    const fechaActual=new Date(Date.now());
+
+    if (fechaActual < fechaAplicacion || fechaActual > fechaFinExamen) {
       Swal.fire({
         title: "El examen no esta disponible",
         text: "Espera la siguiente etapa",
