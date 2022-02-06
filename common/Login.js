@@ -10,8 +10,8 @@ export const Principal = styled.div`
 
   @media screen and (max-width: 770px){
     background: linear-gradient(217deg, rgba(2, 175, 31, 0.1), rgba(255,0,0,0) 70.71%),
-            linear-gradient(127deg, rgba(3, 204, 161, 0.1), rgba(0,255,0,0) 70.71%),
-            linear-gradient(336deg, rgba(98, 204, 83, 0.1), rgba(0,0,255,0) 70.71%);
+    linear-gradient(127deg, rgba(3, 204, 161, 0.1), rgba(0,255,0,0) 70.71%),
+    linear-gradient(336deg, rgba(98, 204, 83, 0.1), rgba(0,0,255,0) 70.71%);
   }
 `;
 
@@ -77,7 +77,8 @@ export const Contenido = styled.div`
 `;
 
 export const Users = styled.div`
-  width: 45%;
+  width: 100%;
+  height: 40vh;
   overflow: hidden;
   display: flex;
   @media screen and (max-width: 770px){
@@ -87,18 +88,14 @@ export const Users = styled.div`
 
 export const Slide = styled.div`
   width: 100%;
-  display: flex;
+  background-image: url(https://image.freepik.com/vector-gratis/establecer-miembro-perfil-medios-sociales_24877-53571.jpg);
+  background-size: contain;
+  animation: animateSlide 120s linear infinite;
   position: relative;
-  transform: translateX(-50px);
-  animation: animateSlide 60s linear infinite;
-  
-  img{
-    width: 100%;
-    margin: 0px -12px;
-  }
+  left: 100%;
 
   @keyframes animateSlide{
-    0%,2.5%{
+    0%{
         transform: translateX(0);
     }
     5%{

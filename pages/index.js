@@ -109,9 +109,9 @@ const index = () => {
             <Grid.Column width={9}>
               <Users>
                 <Slide>
+                  {/* <img src="https://image.freepik.com/vector-gratis/establecer-miembro-perfil-medios-sociales_24877-53571.jpg" alt="users" />
                   <img src="https://image.freepik.com/vector-gratis/establecer-miembro-perfil-medios-sociales_24877-53571.jpg" alt="users" />
-                  <img src="https://image.freepik.com/vector-gratis/establecer-miembro-perfil-medios-sociales_24877-53571.jpg" alt="users" />
-                  <img src="https://image.freepik.com/vector-gratis/establecer-miembro-perfil-medios-sociales_24877-53571.jpg" alt="users" />
+                  <img src="https://image.freepik.com/vector-gratis/establecer-miembro-perfil-medios-sociales_24877-53571.jpg" alt="users" /> */}
                 </Slide>
               </Users>
 
