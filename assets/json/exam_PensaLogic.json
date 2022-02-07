@@ -1,5 +1,14 @@
 [
     {
+    "_id": "0",
+    "pregunta_txt": "",
+    "pregunta_url": "",
+    "respuesta1": "",
+    "respuesta2": "",
+    "respuesta3": "",
+    "respuesta4": ""
+    },
+    {
     "_id": "83",
     "pregunta_txt": " ",
     "pregunta_url": "https://firebasestorage.googleapis.com/v0/b/seani-954ac.appspot.com/o/imgPreguntas%2F83%20-%20A.jpg?alt=media&token=836d466a-41e0-4345-a27a-7428f66a6ad2",

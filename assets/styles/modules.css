@@ -29,12 +29,12 @@ h2{
 }
 .modulo img {
   width: 100px;
+  transition: all 0.7s ease;
 }
 .modulo:hover {
   cursor: pointer;
 }
 .modulo:hover img {
-  transition: all 0.7s ease;
   width: 150px;
   transform: translateX(-30px);
 }

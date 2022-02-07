@@ -5,7 +5,7 @@ export const useStylesEscene= makeStyles({
       minWidth: 276,
     },
     toor:{
-        minWidth: 276,
+      minWidth: 276,
     },
     bullet: {
       display: 'inline-block',
@@ -19,4 +19,7 @@ export const useStylesEscene= makeStyles({
       marginBottom: 2,
       fontSize: 25
     },
+    newToor:{
+      width: '100%'
+    }
   });

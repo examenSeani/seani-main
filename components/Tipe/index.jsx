@@ -9,7 +9,7 @@ import { useStylesEscene } from 'assets/style-js'
 export default function Tipe({ items }) {
     const classes = useStylesEscene();
     return (
-        <Card className={classes.toor} >
+        <Card className={classes.newToor} >
             <CardContent>
                 {items.map((poste, index) => (
                     <Typography style={{fontSize: 25, marginBottom: 2}}color="textSecondary" key={index}>
