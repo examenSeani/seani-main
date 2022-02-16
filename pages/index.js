@@ -66,7 +66,7 @@ const index = () => {
 
             Swal.fire({
               title: "Acerca del examen",
-              text: "Tú usuario y contraseña son válidos, la fecha de tú examen es: el "+fechaAplicacion.toLocaleDateString("es-ES",options),
+              text: "Tú usuario y contraseña son válidos, la fecha de tú examen es el "+fechaAplicacion.toLocaleDateString("es-ES",options),
             
               icon: "warning",
             });
