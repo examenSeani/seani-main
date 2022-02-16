@@ -29,27 +29,6 @@ const index = () => {
     });
   };
 
-    function getMes(mes)
-  {
-      var mesAux="";
-      switch(mes)
-      {
-        case 1: mesAux="enero"; break;
-        case 2: mesAux="febrero"; break;
-        case 3: mesAux="marzo"; break;
-        case 4: mesAux="abril"; break;
-        case 5: mesAux="mayo"; break;
-        case 6: mesAux="junio"; break;
-        case 7: mesAux="julio"; break;
-        case 8: mesAux="agosto"; break;
-        case 9: mesAux="septiembre"; break;
-        case 10: mesAux="octubre"; break;
-        case 11: mesAux="noviembre"; break;
-        case 12: mesAux="diciembre"; break;
-      }
-
-      return mesAux;
-  }
   
  const handlerSubmit = (e) => {
     e.preventDefault();
@@ -83,18 +62,12 @@ const index = () => {
 
           if(fechaActual < fechaAplicacion)
           {
-
-            var anio= fechaAplicacion.getFullYear();
-            var mes= fechaAplicacion.getMonth();
-            var dia= fechaAplicacion.getDay();
-
-
-
-         
+            var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
             Swal.fire({
               title: "Acerca del examen",
-              text: "Tú usuario y contraseña son válidos, la fecha de tú examen es: el día " +dia+ " de "+ getMes(mes) + " de "+anio,
+              text: "Tú usuario y contraseña son válidos, la fecha de tú examen es: el "+fechaAplicacion.toLocaleDateString("es-ES",options),
+            
               icon: "warning",
             });
 
@@ -102,6 +75,7 @@ const index = () => {
             return false;
 
           }
+          
           
 
           dispatch(accionUser(response.user));
