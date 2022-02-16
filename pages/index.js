@@ -29,19 +29,44 @@ const index = () => {
     });
   };
 
-  const handlerSubmit = (e) => {
+    function getMes(mes)
+  {
+      var mesAux="";
+      switch(mes)
+      {
+        case 1: mesAux="enero"; break;
+        case 2: mesAux="febrero"; break;
+        case 3: mesAux="marzo"; break;
+        case 4: mesAux="abril"; break;
+        case 5: mesAux="mayo"; break;
+        case 6: mesAux="junio"; break;
+        case 7: mesAux="julio"; break;
+        case 8: mesAux="agosto"; break;
+        case 9: mesAux="septiembre"; break;
+        case 10: mesAux="octubre"; break;
+        case 11: mesAux="noviembre"; break;
+        case 12: mesAux="diciembre"; break;
+      }
+
+      return mesAux;
+  }
+  
+ const handlerSubmit = (e) => {
     e.preventDefault();
 
     const fechaActual=new Date(Date.now());
 
-    if (fechaActual < fechaAplicacion || fechaActual > fechaFinExamen) {
+    if (fechaActual > fechaFinExamen) {
+
       Swal.fire({
         title: "El examen no esta disponible",
         text: "Espera la siguiente etapa",
         icon: "warning",
       });
-
+      
+    
       return false;
+
     } else {
       if (!formDta.email || !formDta.password) {
         enqueueSnackbar("Completa los campos", {
@@ -49,10 +74,36 @@ const index = () => {
         });
         return false;
       }
+
       setIsloadin(true);
       logIn(formDta)
         .then(async (response) => {
           
+
+
+          if(fechaActual < fechaAplicacion)
+          {
+
+            var anio= fechaAplicacion.getFullYear();
+            var mes= fechaAplicacion.getMonth();
+            var dia= fechaAplicacion.getDay();
+
+
+
+         
+
+            Swal.fire({
+              title: "Acerca del examen",
+              text: "Tú usuario y contraseña son válidos, la fecha de tú examen es: el día " +dia+ " de "+ getMes(mes) + " de "+anio,
+              icon: "warning",
+            });
+
+            setIsloadin(false);
+            return false;
+
+          }
+          
+
           dispatch(accionUser(response.user));
           const { data } = await getInitial(response.user.uid);
           document.cookie = `user=${JSON.stringify(response.user)}; max-age=3600; path=/; secure`;
@@ -62,7 +113,9 @@ const index = () => {
           document.cookie = `activeMat=${JSON.stringify(data.activeMat)}; max-age=3600; path=/; secure`;
           dispatch(accionAlumno({ data }));
           setIsloadin(false);
-          router.push("/home");
+
+         
+            router.push("/home");
         })
         .catch((err) => {
           setIsloadin(false);
