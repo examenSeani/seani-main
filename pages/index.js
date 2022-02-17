@@ -62,11 +62,11 @@ const index = () => {
 
           if(fechaActual < fechaAplicacion)
           {
-            var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' ,hour: '2-digit', minute: '2-digit'};
 
             Swal.fire({
               title: "Acerca del examen",
-              text: "Tú usuario y contraseña son válidos, la fecha de tú examen es el "+fechaAplicacion.toLocaleDateString("es-ES",options),
+              text: "Tú usuario y contraseña son válidos, la fecha de tú examen es el "+fechaAplicacion.toLocaleDateString("es-ES",options) + " horas",
             
               icon: "warning",
             });
