@@ -13,8 +13,11 @@ import {testExam} from 'utils/api';
 //styled
 import {IMG} from './styled';
 import Alert from '../Alert/Alert';
+import { useRouter } from "next/router";
 
 const Pregunta1 = ({ dtajs, dataAlumno, posision }) => {
+  const router = useRouter();
+  const {page}=router.query;
   let conver = parseInt(posision);
   let valorActive = dataAlumno[conver] ? dataAlumno[conver] : "";
   
@@ -60,6 +63,11 @@ const Pregunta1 = ({ dtajs, dataAlumno, posision }) => {
         changeAlert({
           tipo: 'exito', mensaje: 'Se guardo con exito'
         });
+        page < 30 ? router.push(`/exam?page=${parseInt(page) + 1}`) :
+        setTimeout(()=>{
+          changeAlert({tipo: 'exito', mensaje: 'Da click en Terminar este modulo'});
+        }, 1800);
+        
       }).catch(()=>{
         changeAlertState(true);
         changeAlert({

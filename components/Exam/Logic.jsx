@@ -10,8 +10,13 @@ import {useSelector} from 'react-redux'
 import {testLogic} from 'utils/api';
 import {IMG} from './styled';
 import Alert from '../Alert/Alert';
+import { useRouter } from "next/router";
 
 const Logic = ({ dtajs, dataAlumno, posision }) => {
+
+  const router = useRouter();
+  const { page }=router.query;
+
   let conver = parseInt(posision);
   let valorActive = dataAlumno[conver] ? dataAlumno[conver] : "";
 
@@ -56,6 +61,10 @@ const Logic = ({ dtajs, dataAlumno, posision }) => {
         changeAlert({
           tipo: 'exito', mensaje: 'Se guardo con exito'
         });
+        page < 15 ? router.push(`/logico?page=${parseInt(page) + 1}`) :
+        setTimeout(()=>{
+          changeAlert({tipo: 'exito', mensaje: 'Da click en Terminar este modulo'});
+        }, 1800);
       }).catch(()=>{
         changeAlertState(true);
         changeAlert({

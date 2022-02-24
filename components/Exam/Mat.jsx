@@ -12,7 +12,11 @@ import {useSelector} from 'react-redux'
 import {mateExam} from 'utils/api';
 import {IMG} from './styled';
 import Alert from '../Alert/Alert';
+import { useRouter } from "next/router";
+
 const Mat = ({ dtajs, dataAlumno, posision }) => {
+  const router = useRouter();
+  const { page } = router.query;
 
   const user = useSelector(state => state.user)
   let conver = parseInt(posision);
@@ -52,6 +56,10 @@ const Mat = ({ dtajs, dataAlumno, posision }) => {
         changeAlert({
           tipo: 'exito', mensaje: 'Se guardo con exito'
         });
+        page < 25 ? router.push(`/mate?page=${parseInt(page) + 1}`) :
+        setTimeout(()=>{
+          changeAlert({tipo: 'exito', mensaje: 'Da click en Terminar este modulo'});
+        }, 1800);
       }).catch(()=>{
         changeAlertState(true);
         changeAlert({
