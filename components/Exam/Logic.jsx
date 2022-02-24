@@ -76,7 +76,7 @@ const Logic = ({ dtajs, dataAlumno, posision }) => {
   };
 
   return (
-    <div>
+    <div className="form-pregunta">
       {dtajs?.pregunta_txt ? <h1>{dtajs?.pregunta_txt}</h1> : null}
       {dtajs?.pregunta_url ? (
         <IMG
@@ -133,6 +133,7 @@ const Logic = ({ dtajs, dataAlumno, posision }) => {
           >
             Guardar Respuesta
           </Button>
+          
         </FormControl>
       </form>
       <Alert tipo={alert.tipo} mensaje={alert.mensaje} estadoAlerta={alertState} cambiarEstadoAerta={changeAlertState} />

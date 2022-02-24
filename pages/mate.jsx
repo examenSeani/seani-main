@@ -53,7 +53,8 @@ const mate = () => {
       </Head>
       <Container>
         {elegir(router.query.page)}
-        <div className={classes.root}>
+
+        {/* <div className={classes.root}>
           <Pagination
             className=" transparent center-align"
             count={data.length - 1}
@@ -62,7 +63,8 @@ const mate = () => {
             color="primary"
             onChange={handleChange}
           />
-        </div>
+        </div> */}
+
       </Container>
     </>
   );

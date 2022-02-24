@@ -51,7 +51,9 @@ const exam = () => {
         <title>SEANI | Pensamiento analítico</title>
       </Head>
       {elegir(parseInt(router.query.page))}
-      <div className={classes.root}>
+
+      {/* Aqui esta la barra de navegacióntre preguntas */}
+      {/* <div className={classes.root}>
         <Pagination
           className=" transparent center-align"
           count={data.length - 1}
@@ -60,7 +62,8 @@ const exam = () => {
           color="primary"
           onChange={handleChange}
         />
-      </div>
+      </div> */}
+      
     </div>
   );
 };

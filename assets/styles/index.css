@@ -398,3 +398,7 @@ iframe {
 blockquote{
   overflow: hidden;
 }
+
+.form-pregunta{
+  padding: 0px 0px 20px 0px;
+}

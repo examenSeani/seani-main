@@ -70,7 +70,7 @@ const Mat = ({ dtajs, dataAlumno, posision }) => {
     }
   };
   return (
-    <div className="container">
+    <div className="container form-pregunta">
       {dtajs?.pregunta_txt ? <h1>{dtajs?.pregunta_txt}</h1> : null}
       {dtajs?.pregunta_url ? (
         <IMG
