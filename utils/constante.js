@@ -1,2 +1,2 @@
-export const fechaAplicacion = new Date("2022-02-28T09:00");
-export const fechaFinExamen = new Date("2022-02-28T12:30");
+export const fechaAplicacion = new Date("2022-02-24T12:00");
+export const fechaFinExamen = new Date("2022-06-28T14:00");
