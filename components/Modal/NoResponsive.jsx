@@ -98,7 +98,7 @@ const NoResponsive = () => {
       <IconButton aria-label="Exit examen" color="inherit">
         <DoneIcon />
       </IconButton>
-      <p>Terminar Examen</p>
+      <p>Terminar este módulo</p>
     </MenuItem>
   );
 };

@@ -11,6 +11,7 @@ import {testLogic} from 'utils/api';
 import {IMG} from './styled';
 import Alert from '../Alert/Alert';
 import { useRouter } from "next/router";
+import Modal from "components/Modal/ModalBasic";
 
 const Logic = ({ dtajs, dataAlumno, posision }) => {
 
@@ -24,6 +25,8 @@ const Logic = ({ dtajs, dataAlumno, posision }) => {
   const [selectValue, setSelectValue] = useState(valorActive.respuesta);
   const [alertState, changeAlertState]=useState(false);
   const [alert, changeAlert]=useState({});
+  const [endModule, setEndModule]=useState(false);
+
   const user = useSelector(state => state.user)
 
   useEffect(() => {
@@ -61,10 +64,8 @@ const Logic = ({ dtajs, dataAlumno, posision }) => {
         changeAlert({
           tipo: 'exito', mensaje: 'Se guardo con exito'
         });
-        page < 15 ? router.push(`/logico?page=${parseInt(page) + 1}`) :
-        setTimeout(()=>{
-          changeAlert({tipo: 'exito', mensaje: 'Da click en Terminar este modulo'});
-        }, 1800);
+        page < 15 ? router.push(`/logico?page=${parseInt(page) + 1}`) : setEndModule(true)
+        
       }).catch(()=>{
         changeAlertState(true);
         changeAlert({
@@ -131,10 +132,10 @@ const Logic = ({ dtajs, dataAlumno, posision }) => {
             size="large"
             startIcon={<SaveIcon />}
           >
-            Guardar Respuesta
+            { page == 15 ? 'Guardar y terminar módulo' : 'Guardar Respuesta' }
           </Button>
-          
         </FormControl>
+        { endModule ? <Modal/> : null}
       </form>
       <Alert tipo={alert.tipo} mensaje={alert.mensaje} estadoAlerta={alertState} cambiarEstadoAerta={changeAlertState} />
     </div>

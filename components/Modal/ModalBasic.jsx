@@ -1,11 +1,10 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {useRouter} from 'next/router'
 import Swal from "sweetalert2";
 import { Menu } from "semantic-ui-react";
 import {useSelector,useDispatch} from 'react-redux';
 import {accionAlumno} from 'redux/accion'
 import {mateCancel,logiCancel,lenguaCancel,examCancel,getInitial} from 'utils/api';
-
 
 const Modal = () => {
   //hooks
@@ -88,9 +87,13 @@ const Modal = () => {
     }
   };
   
+  useEffect(()=>{
+    primer();
+  }, [])
+
   return (
     <div>
-      <Menu.Item name="Terminar este módulo" onClick={primer} className="my-color" />
+      <Menu.Item name="Terminar este módulo" className="my-color" />
     </div>
   );
 };

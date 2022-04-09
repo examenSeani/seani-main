@@ -4,8 +4,6 @@ import {useRouter} from 'next/router'
 import {accionAlumno,accionUser} from 'redux/accion'
 import {logOut} from 'utils/api'
 //components
-import Exit from "components/Modal/ModalBasic";
-import NotRes from "components/Modal/NoResponsive";
 import Reloj from "components/Reloj/RelojLimit";
 import {useStylesMenu} from 'assets/style-js'
 //Material 
@@ -16,9 +14,6 @@ import Typography from "@material-ui/core/Typography";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
-import MoreIcon from "@material-ui/icons/MoreVert";
-
-
 
 
 const MenuApp = () => {
@@ -43,10 +38,6 @@ const MenuApp = () => {
     setMobileMoreAnchorEl(null);
   };
 
-  const handleMobileMenuOpen = (event) => {
-    setMobileMoreAnchorEl(event.currentTarget);
-  };
-
   const mobileMenuId = "primary-search-account-menu-mobile";
   const renderMobileMenu = (
     <Menu
@@ -59,7 +50,8 @@ const MenuApp = () => {
       onClose={handleMobileMenuClose}
     >
       {activeTest ? (
-       <NotRes/>
+        null
+      //  <NotRes/>
       ) : (
         <MenuItem onClick={logout}>
           <IconButton aria-label="Exit app" color="inherit">
@@ -85,7 +77,8 @@ const MenuApp = () => {
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             {activeTest ? (
-              <Exit/>
+              null
+              // <Exit/>
             ) : (
               <IconButton
                 edge="end"
@@ -99,17 +92,6 @@ const MenuApp = () => {
               </IconButton>
               //<Exit exitExam={null} examen={examen} />
             )}
-          </div>
-          <div className={classes.sectionMobile}>
-            <IconButton
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
           </div>
         </Toolbar>
       </AppBar>

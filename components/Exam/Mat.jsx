@@ -13,6 +13,7 @@ import {mateExam} from 'utils/api';
 import {IMG} from './styled';
 import Alert from '../Alert/Alert';
 import { useRouter } from "next/router";
+import Modal from "components/Modal/ModalBasic";
 
 const Mat = ({ dtajs, dataAlumno, posision }) => {
   const router = useRouter();
@@ -25,6 +26,7 @@ const Mat = ({ dtajs, dataAlumno, posision }) => {
   const [selectValue, setSelectValue] = useState(valorActive.respuesta);
   const [alertState, changeAlertState]=useState(false);
   const [alert, changeAlert]=useState({});
+  const [endModule, setEndModule]=useState(false);
 
   useEffect(() => {
     setSelectValue(valorActive.respuesta);
@@ -56,10 +58,8 @@ const Mat = ({ dtajs, dataAlumno, posision }) => {
         changeAlert({
           tipo: 'exito', mensaje: 'Se guardo con exito'
         });
-        page < 25 ? router.push(`/mate?page=${parseInt(page) + 1}`) :
-        setTimeout(()=>{
-          changeAlert({tipo: 'exito', mensaje: 'Da click en Terminar este modulo'});
-        }, 1800);
+        page < 25 ? router.push(`/mate?page=${parseInt(page) + 1}`) : setEndModule(true);
+      
       }).catch(()=>{
         changeAlertState(true);
         changeAlert({
@@ -128,6 +128,7 @@ const Mat = ({ dtajs, dataAlumno, posision }) => {
             Guardar Respuesta
           </Button>
         </FormControl>
+        { endModule ? <Modal/> : null}
       </form>
       <Alert tipo={alert.tipo} mensaje={alert.mensaje} estadoAlerta={alertState} cambiarEstadoAerta={changeAlertState} />
     </div>
