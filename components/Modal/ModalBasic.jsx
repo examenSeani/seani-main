@@ -16,7 +16,7 @@ const Modal = () => {
   const user = useSelector(state => state.user);
   
   const primer = () => {
-    if (time > 0) {
+    if (time > 0 || typeof time === NaN) {
       Swal.fire({
         title: `¿Terminar módulo ${typeTest}?`,
         text: "Estas finalizando esta sección de tú evaluación, no se podrá revertir esta acción",
