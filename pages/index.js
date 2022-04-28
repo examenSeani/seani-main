@@ -25,7 +25,7 @@ const index = () => {
     const { value, name } = e.target;
     setFormDta({
       ...formDta,
-      [name]: value,
+      [name]: value.trim(),
     });
   };
 
