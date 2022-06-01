@@ -136,6 +136,7 @@ const Logic = ({ dtajs, dataAlumno, posision }) => {
           </Button>
         </FormControl>
         { endModule ? <Modal/> : null}
+        {page === 15 ? <a>Al inicio prro</a> : ''}
       </form>
       <Alert tipo={alert.tipo} mensaje={alert.mensaje} estadoAlerta={alertState} cambiarEstadoAerta={changeAlertState} />
     </div>

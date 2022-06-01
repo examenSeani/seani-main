@@ -77,14 +77,14 @@ const Lengua = ({ dtajs, dataAlumno, posision }) => {
       {dtajs?.pregunta_txt ? <h1>{dtajs?.pregunta_txt}</h1> : null}
       {dtajs?.pregunta_url ? (
         <IMG
-          className="responsive-img materialboxed"
-          src={dtajs?.pregunta_url}
-          alt="pregunta"
-          width="900px"
-          height="550px"
-          // onClick={zoomHandler}
+        className="responsive-img materialboxed"
+        src={dtajs?.pregunta_url}
+        alt="pregunta"
+        width="900px"
+        height="550px"
+        // onClick={zoomHandler}
         />
-      ) : null}
+        ) : null}
       <form onSubmit={handlerSubmit}>
         <FormControl component="fieldset">
           <RadioGroup
@@ -128,7 +128,6 @@ const Lengua = ({ dtajs, dataAlumno, posision }) => {
             size="large"
             startIcon={<SaveIcon />}
           >
-            Guardar Respuesta
           </Button>
         </FormControl>
         { endModule ? <Modal/> : null}
