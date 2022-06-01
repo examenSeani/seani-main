@@ -1,3 +1,4 @@
+//Pensamiento Analitico
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import Cookies from 'cookies'
