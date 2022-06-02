@@ -73,3 +73,13 @@ h2{
     text-align: center;
   }
 }
+
+@media (max-width: 412px) {
+  .modulo{
+    height: max-content;
+  }
+  .modulo h2{
+    font-size: 15px;
+    text-align: center;
+  }
+}
