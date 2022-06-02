@@ -88,7 +88,7 @@ const Modal = () => {
       Swal.fire({
         title: `Existio un error`,
         iconColor:"#ff0000",
-        text: `En el cronometro hay un error, porfavor cierra esta alerta y despues da click en el texto "Ultima Pregunta del módulo Actual 🏅", para ser redirigido a la pagina principal y asi continuar con el siguiente módulo. Puedes dar Por termiando este módulo. No abra ningun problema`,
+        text: `En el cronometro hay un error, por favor cierra esta alerta y después da click en el texto "Ultima Pregunta del módulo Actual 🏅" para ser re dirigido a la pagina principal y así continuar con el siguiente módulo. Puedes dar Por terminado este módulo. No abra ningún problema todas tus respuestas ya han sido guardadas con éxito.`,
         icon: "warning",
         confirmButtonText: "OK",
       })
