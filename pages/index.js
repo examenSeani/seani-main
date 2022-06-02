@@ -10,6 +10,7 @@ import Cookies from 'cookies'
 import { fechaAplicacion, fechaFinExamen } from 'utils/variables'
 import { accionUser, accionAlumno } from "../redux/accion";
 import Swal from "sweetalert2";
+import { collection } from '../utils/variables';
 
 const index = () => {
   //hooks
@@ -20,6 +21,7 @@ const index = () => {
   const [isloadin, setIsloadin] = useState(false);
   const [formDta, setFormDta] = useState({ password: "", email: "" });
 
+  console.log(collection);
 
   const handlerChange = (e) => {
     const { value, name } = e.target;
