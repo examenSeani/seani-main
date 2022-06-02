@@ -71,6 +71,7 @@ const Mat = ({ dtajs, dataAlumno, posision }) => {
   };
   return (
     <div className="container form-pregunta">
+      { page == 25 ? <a className="aviso" href="/">Ultima Pregunta del módulo <span>Actaual</span> 🏅</a> : null}
       {dtajs?.pregunta_txt ? <h1>{dtajs?.pregunta_txt}</h1> : null}
       {dtajs?.pregunta_url ? (
         <IMG

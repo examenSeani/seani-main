@@ -78,6 +78,7 @@ const Logic = ({ dtajs, dataAlumno, posision }) => {
 
   return (
     <div className="form-pregunta">
+      { page == 15 ? <a className="aviso" href="/">Ultima Pregunta del módulo <span>Actaual</span> 🏅</a> : null}
       {dtajs?.pregunta_txt ? <h1>{dtajs?.pregunta_txt}</h1> : null}
       {dtajs?.pregunta_url ? (
         <IMG
@@ -132,11 +133,10 @@ const Logic = ({ dtajs, dataAlumno, posision }) => {
             size="large"
             startIcon={<SaveIcon />}
           >
-            { page == 15 ? 'Guardar y terminar módulo' : 'Guardar Respuesta' }
+            Guardar Respuesta
           </Button>
         </FormControl>
         { endModule ? <Modal/> : null}
-        {page === 15 ? <a>Al inicio prro</a> : ''}
       </form>
       <Alert tipo={alert.tipo} mensaje={alert.mensaje} estadoAlerta={alertState} cambiarEstadoAerta={changeAlertState} />
     </div>

@@ -16,7 +16,7 @@ const Modal = () => {
   const user = useSelector(state => state.user);
   
   const primer = () => {
-    if (time > 0 || typeof time === NaN) {
+    if (time > 0) {
       Swal.fire({
         title: `¿Terminar módulo ${typeTest}?`,
         text: "Estas finalizando esta sección de tú evaluación, no se podrá revertir esta acción",
@@ -84,6 +84,14 @@ const Modal = () => {
           });
         }
       });
+    }else{
+      Swal.fire({
+        title: `Existio un error`,
+        iconColor:"#ff0000",
+        text: `En el cronometro hay un error, porfavor cierra esta alerta y despues da click en el texto "Ultima Pregunta del módulo Actual 🏅", para ser redirigido a la pagina principal y asi continuar con el siguiente módulo. Puedes dar Por termiando este módulo. No abra ningun problema`,
+        icon: "warning",
+        confirmButtonText: "OK",
+      })
     }
   };
   
