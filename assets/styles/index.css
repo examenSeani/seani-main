@@ -415,3 +415,15 @@ blockquote{
 .aviso span{
   text-shadow: .5px .5px 0px rgb(255, 255, 255), 1px 1px 0px rgb(20, 54, 178);
 }
+
+.mobile-menu{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-menu p{
+  color: #fff;
+  font-size: 18px;
+}

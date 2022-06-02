@@ -72,14 +72,8 @@ const MenuApp = () => {
               <Reloj user={user} alumno={alumno}/>
             </Typography>
           ) : (
-            "SEANI"
-          )}
-          <div className={classes.grow} />
-          <div className={classes.sectionDesktop}>
-            {activeTest ? (
-              null
-              // <Exit/>
-            ) : (
+            <div className="mobile-menu">
+            <p>SEANI</p>
               <IconButton
                 edge="end"
                 aria-label="account of current user"
@@ -90,9 +84,8 @@ const MenuApp = () => {
                 <ExitToAppIcon />
                 Salir
               </IconButton>
-              //<Exit exitExam={null} examen={examen} />
-            )}
-          </div>
+            </div>
+          )}
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
